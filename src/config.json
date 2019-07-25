@@ -1,0 +1,10 @@
+{
+    "api": {
+        "invokeUrl": "http://ce.ansync.net/thapi"
+    },
+    "cognito" : {
+        "REGION": "us-west-2",
+        "USER_POOL_ID": "us-west-2_8Zo7EMc8f",
+        "APP_CLIENT_ID": "7r2llv99vj2kodm6qt5cupnag5"
+      } 
+}
