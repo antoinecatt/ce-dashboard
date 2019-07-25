@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Col,
-  Row
-} from "reactstrap";
+import { Card, CardBody, CardTitle, Button, Col, Row } from "reactstrap";
 
 export default class Dashboard extends Component {
   render() {

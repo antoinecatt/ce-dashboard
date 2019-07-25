@@ -36,4 +36,4 @@ function DeviceFormErrors(props) {
   }
 }
 
-export default FormErrors;
+export default DeviceFormErrors;

@@ -53,26 +53,33 @@ class Sites extends Component {
         this.setState({ nameAlert: true });
       } else {
         console.log(params);
-        await axios.post(`${config.api.invokeUrl}/users/${name}`, params, {
+        await axios.post(`${config.api.invokeUrl}/sites`, params, {
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"
           }
         });
 
-        await axios.put(`${config.api.invokeUrl}/users/${name}`, params);
-        this.setState({
-          devices: [...this.state.users, this.state.newSite]
-        });
-        this.setState({
-          newSite: {
-            name: ""
+        await axios.put(`${config.api.invokeUrl}/sites/${name}`, params, {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
           }
+        });
+
+        this.setState({
+          devices: [...this.state.sites, this.state.newSite]
         });
       }
     } catch (err) {
       console.log(`An error has occurred: ${err}`);
     }
+    console.log(this.state.sites);
+    this.setState({
+      newSite: {
+        name: ""
+      }
+    });
   };
 
   onAddNameChange = event => {
