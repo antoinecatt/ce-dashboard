@@ -4,7 +4,6 @@ import "./App.css";
 import "./Loader.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Products from "./components/Products";
 import DeviceAdmin from "./components/DeviceAdmin";
 import LogIn from "./components/auth/LogIn";
 import Register from "./components/auth/Register";
@@ -124,11 +123,6 @@ class App extends Component {
                   exact
                   path="/devices/:id"
                   render={props => <DeviceInfo {...props} auth={authProps} />}
-                />
-                <Route
-                  exact
-                  path="/products"
-                  render={props => <Products {...props} auth={authProps} />}
                 />
                 <Route
                   exact

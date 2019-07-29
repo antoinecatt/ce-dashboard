@@ -126,21 +126,21 @@ export default class DeviceAdmin extends Component {
       } else {
         console.log(this.state.newDevice.id);
         console.log(params);
-        // await axios.post(`${config.api.invokeUrl}/devices/${id}`, params, {
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //     "Access-Control-Allow-Origin": "*"
-        //   }
-        // });
+        await axios.post(`${config.api.invokeUrl}/devices/${id}`, params, {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          }
+        });
 
-        // await axios.put(
-        //   `${config.api.invokeUrl}/users/${username}/devices/${id}`,
-        //   params
-        // );
+        await axios.put(
+          `${config.api.invokeUrl}/users/${username}/devices/${id}`,
+          params
+        );
 
-        // this.setState({
-        //   devices: [...this.state.devices, this.state.newDevice]
-        // });
+        this.setState({
+          devices: [...this.state.devices, this.state.newDevice]
+        });
         this.setState(prevState => {
           return {
             newDevice: {
