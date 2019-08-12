@@ -9,7 +9,7 @@ class LogIn extends Component {
     password: "",
     "custom:permission": "",
     errors: {
-      cognito: null,
+      cognito: { code: null },
       blankfield: false
     }
   };
@@ -53,6 +53,8 @@ class LogIn extends Component {
         );
         await Auth.resendSignUp(username);
       }
+
+      console.log(err);
       console.log(err.code);
       let error = null;
       !err.message ? (error = { message: err }) : (error = err);
@@ -77,8 +79,15 @@ class LogIn extends Component {
       <section className="section auth">
         <div className="container">
           <h1>Log in</h1>
-          <FormErrors formerrors={this.state.errors} />
-
+          {this.state.errors.cognito.code === "UnexpectedLambdaException" ? (
+            <div className="error container help is-danger">
+              <div className="row justify-content-center">
+                Password cannot be empty
+              </div>
+            </div>
+          ) : (
+            <FormErrors formerrors={this.state.errors} />
+          )}
           <form onSubmit={this.handleSubmit} className="login-form">
             <div className="field ">
               <p className="control">

@@ -72,6 +72,7 @@ class App extends Component {
       setUser: this.setUser,
       setPermission: this.setPermission
     };
+
     return (
       !this.state.isAuthenticating && (
         <div className="App">
